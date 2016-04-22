@@ -11,11 +11,11 @@ Main Controller class
 
 package controller;
 
-public class Controller {
-    public static void main(String[] args) {
-        /* Create and show the test GUI */
-        ControllerJFrame TestFrame = new ControllerJFrame();
-        TestFrame.pack();
-        TestFrame.setVisible(true);
+import gasPumpMain.GUIListener;
+
+public class Controller implements GUIListener {
+    @Override
+    public void GUIEvent() {
+        
     }
 }
