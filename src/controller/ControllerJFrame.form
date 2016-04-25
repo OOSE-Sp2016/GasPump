@@ -201,6 +201,9 @@
                 </Property>
                 <Property name="rows" type="int" value="5"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
@@ -209,6 +212,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="1"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
@@ -217,6 +223,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="2"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
@@ -225,6 +234,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="3"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton4">
               <Properties>
@@ -233,6 +245,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="4"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton5">
               <Properties>
@@ -241,6 +256,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="5"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton6">
               <Properties>
@@ -249,6 +267,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="6"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton7">
               <Properties>
@@ -257,6 +278,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="7"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton8">
               <Properties>
@@ -265,6 +289,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="8"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton9">
               <Properties>
@@ -273,6 +300,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="9"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton0">
               <Properties>
@@ -292,6 +322,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Clear"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonClearActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonEnter">
               <Properties>
@@ -311,6 +344,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Yes"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonYesActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonNo">
               <Properties>
@@ -322,6 +358,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="No"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonNoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonCancel">
               <Properties>
@@ -330,6 +369,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cancel"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -379,6 +421,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Debit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDebitActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonCredit">
               <Properties>
@@ -387,6 +432,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Credit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCreditActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonCardButton">
               <Properties>
@@ -395,6 +443,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div align=&quot;center&quot;&gt;Press to &lt;br /&gt;&#xa;Simulate&lt;br /&gt;&#xa;Card Swipe&lt;/div&gt;&lt;/html&gt;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCardButtonActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -461,6 +512,9 @@
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="$0.00"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldRegular">
               <Properties>
@@ -477,6 +531,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldRegularActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldPremium">
               <Properties>
@@ -490,6 +547,9 @@
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="$0.00"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonRegular">
               <Properties>
@@ -498,6 +558,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Regular"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRegularActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonPlus">
               <Properties>
@@ -506,6 +569,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Plus"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPlusActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonPremium">
               <Properties>
@@ -514,6 +580,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Premium"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPremiumActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -570,6 +639,9 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="0.00"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelTotal">
               <Properties>
@@ -598,6 +670,9 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="$0.00"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -608,6 +683,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Remove/Replace Handle"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButtonRemovePumpActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButtonStartPump">
           <Properties>
@@ -625,12 +703,18 @@
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Pump Off"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelHandle">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Handle On"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

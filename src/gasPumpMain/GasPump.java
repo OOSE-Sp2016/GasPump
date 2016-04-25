@@ -22,5 +22,8 @@ public class GasPump {
         ControllerJFrame TestFrame = new ControllerJFrame();
         TestFrame.pack();
         TestFrame.setVisible(true);
+        TestFrame.addListener(Control);
+        
+        Control.SetGUIObj(TestFrame);
     }
 }

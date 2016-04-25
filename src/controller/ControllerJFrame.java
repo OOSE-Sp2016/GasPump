@@ -12,6 +12,7 @@ package controller;
 
 import java.util.*;
 import gasPumpMain.GUIListener;
+import controller.Controller.GUIEventType;
 
 public class ControllerJFrame extends javax.swing.JFrame {
     private List<GUIListener> listeners = new ArrayList<GUIListener>();
@@ -89,30 +90,75 @@ public class ControllerJFrame extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setText("2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setText("3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setText("4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setText("5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setBackground(new java.awt.Color(255, 255, 255));
         jButton6.setText("6");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
         jButton7.setText("7");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setBackground(new java.awt.Color(255, 255, 255));
         jButton8.setText("8");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setBackground(new java.awt.Color(255, 255, 255));
         jButton9.setText("9");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton0.setBackground(new java.awt.Color(255, 255, 255));
         jButton0.setText("0");
@@ -124,6 +170,11 @@ public class ControllerJFrame extends javax.swing.JFrame {
 
         jButtonClear.setBackground(new java.awt.Color(255, 255, 0));
         jButtonClear.setText("Clear");
+        jButtonClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonClearActionPerformed(evt);
+            }
+        });
 
         jButtonEnter.setBackground(new java.awt.Color(51, 255, 51));
         jButtonEnter.setText("Enter");
@@ -135,13 +186,28 @@ public class ControllerJFrame extends javax.swing.JFrame {
 
         jButtonYes.setBackground(new java.awt.Color(51, 255, 51));
         jButtonYes.setText("Yes");
+        jButtonYes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonYesActionPerformed(evt);
+            }
+        });
 
         jButtonNo.setBackground(new java.awt.Color(204, 0, 0));
         jButtonNo.setForeground(new java.awt.Color(255, 255, 255));
         jButtonNo.setText("No");
+        jButtonNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNoActionPerformed(evt);
+            }
+        });
 
         jButtonCancel.setBackground(new java.awt.Color(255, 255, 0));
         jButtonCancel.setText("Cancel");
+        jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout controlPanelJPanelLayout = new javax.swing.GroupLayout(controlPanelJPanel);
         controlPanelJPanel.setLayout(controlPanelJPanelLayout);
@@ -211,12 +277,27 @@ public class ControllerJFrame extends javax.swing.JFrame {
 
         jButtonDebit.setBackground(new java.awt.Color(255, 255, 255));
         jButtonDebit.setText("Debit");
+        jButtonDebit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDebitActionPerformed(evt);
+            }
+        });
 
         jButtonCredit.setBackground(new java.awt.Color(255, 255, 255));
         jButtonCredit.setText("Credit");
+        jButtonCredit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCreditActionPerformed(evt);
+            }
+        });
 
         jButtonCardButton.setBackground(new java.awt.Color(204, 255, 255));
         jButtonCardButton.setText("<html><div align=\"center\">Press to <br />\nSimulate<br />\nCard Swipe</div></html>");
+        jButtonCardButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCardButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout cardJPanelLayout = new javax.swing.GroupLayout(cardJPanel);
         cardJPanel.setLayout(cardJPanelLayout);
@@ -271,12 +352,27 @@ public class ControllerJFrame extends javax.swing.JFrame {
 
         jButtonRegular.setBackground(new java.awt.Color(255, 255, 255));
         jButtonRegular.setText("Regular");
+        jButtonRegular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegularActionPerformed(evt);
+            }
+        });
 
         jButtonPlus.setBackground(new java.awt.Color(255, 255, 255));
         jButtonPlus.setText("Plus");
+        jButtonPlus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPlusActionPerformed(evt);
+            }
+        });
 
         jButtonPremium.setBackground(new java.awt.Color(255, 255, 255));
         jButtonPremium.setText("Premium");
+        jButtonPremium.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPremiumActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelTypesLayout = new javax.swing.GroupLayout(jPanelTypes);
         jPanelTypes.setLayout(jPanelTypesLayout);
@@ -364,6 +460,11 @@ public class ControllerJFrame extends javax.swing.JFrame {
 
         jToggleButtonRemovePump.setBackground(new java.awt.Color(204, 255, 255));
         jToggleButtonRemovePump.setText("Remove/Replace Handle");
+        jToggleButtonRemovePump.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonRemovePumpActionPerformed(evt);
+            }
+        });
 
         jToggleButtonStartPump.setBackground(new java.awt.Color(204, 204, 255));
         jToggleButtonStartPump.setText("Start/Stop Pump");
@@ -442,11 +543,19 @@ public class ControllerJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnterActionPerformed
-        // TODO add your handling code here:
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONENTER);
+        }
     }//GEN-LAST:event_jButtonEnterActionPerformed
 
     private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
-        // TODO add your handling code here:
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTON0);
+        }
     }//GEN-LAST:event_jButton0ActionPerformed
 
     private void jTextFieldRegularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRegularActionPerformed
@@ -454,8 +563,172 @@ public class ControllerJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldRegularActionPerformed
 
     private void jToggleButtonStartPumpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonStartPumpActionPerformed
-        // TODO add your handling code here:
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONPUMPSTART);
+        }
     }//GEN-LAST:event_jToggleButtonStartPumpActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTON1);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTON2);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTON3);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTON4);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTON5);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTON6);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTON7);
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTON8);
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTON9);
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONCLEAR);
+        }
+    }//GEN-LAST:event_jButtonClearActionPerformed
+
+    private void jButtonYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonYesActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONYES);
+        }
+    }//GEN-LAST:event_jButtonYesActionPerformed
+
+    private void jButtonNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNoActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONNO);
+        }
+    }//GEN-LAST:event_jButtonNoActionPerformed
+
+    private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONCANCEL);
+        }
+    }//GEN-LAST:event_jButtonCancelActionPerformed
+
+    private void jButtonDebitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDebitActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONDEBIT);
+        }
+    }//GEN-LAST:event_jButtonDebitActionPerformed
+
+    private void jButtonCreditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreditActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONCREDIT);
+        }
+    }//GEN-LAST:event_jButtonCreditActionPerformed
+
+    private void jButtonCardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCardButtonActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONSWIPE);
+        }
+    }//GEN-LAST:event_jButtonCardButtonActionPerformed
+
+    private void jButtonRegularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegularActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONPREMIUM);
+        }
+    }//GEN-LAST:event_jButtonRegularActionPerformed
+
+    private void jButtonPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlusActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONPLUS);
+        }
+    }//GEN-LAST:event_jButtonPlusActionPerformed
+
+    private void jButtonPremiumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPremiumActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONPREMIUM);
+        }
+    }//GEN-LAST:event_jButtonPremiumActionPerformed
+
+    private void jToggleButtonRemovePumpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonRemovePumpActionPerformed
+        GUIListener listener;
+        for (Iterator i = listeners.iterator(); i.hasNext();) {
+            listener = (GUIListener) i.next();
+            listener.GUIEvent(GUIEventType.BUTTONHANDLE);
+        }
+    }//GEN-LAST:event_jToggleButtonRemovePumpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -495,7 +768,7 @@ public class ControllerJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cardJPanel;
     private javax.swing.JPanel controlPanelJPanel;
-    private javax.swing.JTextArea displayTextArea;
+    public javax.swing.JTextArea displayTextArea;
     private javax.swing.JButton jButton0;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -518,16 +791,16 @@ public class ControllerJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButtonRegular;
     private javax.swing.JButton jButtonYes;
     private javax.swing.JLabel jLabelGallons;
-    private javax.swing.JLabel jLabelHandle;
-    private javax.swing.JLabel jLabelPump;
+    public javax.swing.JLabel jLabelHandle;
+    public javax.swing.JLabel jLabelPump;
     private javax.swing.JLabel jLabelTotal;
     private javax.swing.JPanel jPanelTotal;
     private javax.swing.JPanel jPanelTypes;
-    private javax.swing.JTextField jTextFieldGallons;
-    private javax.swing.JTextField jTextFieldPlus;
-    private javax.swing.JTextField jTextFieldPremium;
-    private javax.swing.JTextField jTextFieldRegular;
-    private javax.swing.JTextField jTextFieldTotal;
+    public javax.swing.JTextField jTextFieldGallons;
+    public javax.swing.JTextField jTextFieldPlus;
+    public javax.swing.JTextField jTextFieldPremium;
+    public javax.swing.JTextField jTextFieldRegular;
+    public javax.swing.JTextField jTextFieldTotal;
     private javax.swing.JToggleButton jToggleButtonRemovePump;
     private javax.swing.JToggleButton jToggleButtonStartPump;
     private javax.swing.JPanel mainJPanel;
