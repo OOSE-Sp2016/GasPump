@@ -12,6 +12,7 @@ package gasPumpMain;
 
 import controller.ControllerJFrame;
 import controller.Controller;
+import controller.ControllerSimulatedFuncs;
 
 public class GasPump {
     public static void main(String[] args) {
@@ -24,6 +25,14 @@ public class GasPump {
         TestFrame.setVisible(true);
         TestFrame.addListener(Control);
         
-        Control.SetGUIObj(TestFrame);
+        /* Create the simulator */
+        ControllerSimulatedFuncs Simulator = new ControllerSimulatedFuncs();
+        
+        /* Sync up controller with other objs */
+        Control.setGUIObj(TestFrame);
+        Control.setSimulatedObj(Simulator);
+        Simulator.setGUIObj(TestFrame);
+        
+        Simulator.startPump();
     }
 }

@@ -802,7 +802,7 @@ public class ControllerJFrame extends javax.swing.JFrame {
     public javax.swing.JTextField jTextFieldRegular;
     public javax.swing.JTextField jTextFieldTotal;
     private javax.swing.JToggleButton jToggleButtonRemovePump;
-    private javax.swing.JToggleButton jToggleButtonStartPump;
+    public javax.swing.JToggleButton jToggleButtonStartPump;
     private javax.swing.JPanel mainJPanel;
     // End of variables declaration//GEN-END:variables
 }
