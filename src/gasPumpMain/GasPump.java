@@ -33,6 +33,7 @@ public class GasPump {
         Control.setSimulatedObj(Simulator);
         Simulator.setGUIObj(TestFrame);
         
+        /* this is just here for testing */
         Simulator.startPump();
     }
 }
