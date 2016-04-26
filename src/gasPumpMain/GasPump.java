@@ -13,6 +13,8 @@ package gasPumpMain;
 import controller.ControllerJFrame;
 import controller.Controller;
 import controller.ControllerSimulatedFuncs;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GasPump {
     public static void main(String[] args) {
@@ -32,8 +34,5 @@ public class GasPump {
         Control.setGUIObj(TestFrame);
         Control.setSimulatedObj(Simulator);
         Simulator.setGUIObj(TestFrame);
-        
-        /* this is just here for testing */
-        Simulator.startPump();
     }
 }

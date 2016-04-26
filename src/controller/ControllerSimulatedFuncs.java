@@ -11,6 +11,7 @@ This functionality would normally be done by hardware
 */
 package controller;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,6 +25,7 @@ public class ControllerSimulatedFuncs {
     private double CurrentTotal = 0;
     private Thread PumpThread;
     private boolean StopPump = false;
+    private boolean PumpRunning = false;
     
     public void setGUIObj (ControllerJFrame obj) {
         GUIObj = obj;
@@ -62,17 +64,42 @@ public class ControllerSimulatedFuncs {
         PumpThread.start();
     }
     
+    /* Stop pumping gas */
+    public void stopPump() {
+        if (PumpRunning) {
+            StopPump = true;
+        }
+    }
+    
+    /* Increment totals */
     private void incrementPump() {
+        DecimalFormat numberFormat = new DecimalFormat("#.00");
+        GUIObj.jTextFieldGallons.setText(numberFormat.format(CurrentGallons));
+        
+        PumpRunning = true;
         while(StopPump == false) {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException ex) {
-                Logger.getLogger(ControllerSimulatedFuncs.class.getName()).log(Level.SEVERE, null, ex);
+
             }
             
+            CurrentGallons += .09;
+            GUIObj.jTextFieldGallons.setText(
+                    numberFormat.format(CurrentGallons));
             
+            CurrentTotal += .09 * GasCost;
+            String totalTxt = "$" + numberFormat.format(CurrentTotal);
+            GUIObj.jTextFieldTotal.setText(totalTxt);
         }
-        
-        System.out.println("stopping");
+    
+        PumpRunning = false;
+        System.out.println("stopping pump");
     }
+
+    public void setGasCost(double GasCost) {
+        this.GasCost = GasCost;
+    }
+    
+    
 }
