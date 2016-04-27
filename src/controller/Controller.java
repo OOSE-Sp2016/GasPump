@@ -37,7 +37,8 @@ public class Controller implements GUIListener {
     
     private enum States {
         WAITING_FOR_SWIPE, SELECT_DEBIT_CREDIT, ENTER_PIN, ENTER_ZIP,
-        SELECT_GAS_TYPE, HANDLE_ON, HANDLE_OFF_PUMP_OFF, PUMP_ON, HANDLE_RETURN
+        SELECT_GAS_TYPE, HANDLE_ON, HANDLE_OFF_PUMP_OFF, PUMP_ON, 
+        RECEIPT_RESPONSE,
     };
 
     /* constructor - initialize variables */
@@ -81,18 +82,24 @@ public class Controller implements GUIListener {
             if (type == GUIEventType.BUTTONPUMPSTART)
                 pumpStarted();
             else if (type == GUIEventType.BUTTONHANDLE) 
-                handleReturned();
+                promptReceipt();
         } else if (State == States.PUMP_ON) {
             if (type == GUIEventType.BUTTONPUMPSTART)
                 pumpStopped();
-        } else if (State == States.HANDLE_RETURN) {
-            
+        } else if (State == States.RECEIPT_RESPONSE) {
+        	if(type == GUIEventType.BUTTONYES){
+        		printReceipt();
+        	}
+        	else if(type == GUIEventType.BUTTONNO){
+        		noReceipt();
+        	}
+        		
         } else {
             
         }
     }
-    
-    /* Card swiped */
+
+	/* Card swiped */
     private void cardSwiped() {
         /* do some bank stuff here */
         
@@ -251,7 +258,8 @@ public class Controller implements GUIListener {
     private void selectRegular() {
         CurrentPrice = RegularPrice;
         Simulator.setGasCost(RegularPrice);
-       
+        GUIObj.displayTextArea.setText("Regular selected, remove handle when ready");
+        
         State = States.HANDLE_ON;
     }
     
@@ -259,6 +267,7 @@ public class Controller implements GUIListener {
     private void selectPlus() {
         CurrentPrice = PlusPrice;
         Simulator.setGasCost(PlusPrice);
+        GUIObj.displayTextArea.setText("Plus selected, remove handle when ready");
         
         State = States.HANDLE_ON;
     }
@@ -267,35 +276,49 @@ public class Controller implements GUIListener {
     private void selectPremium() {
         CurrentPrice = PremiumPrice;
         Simulator.setGasCost(PremiumPrice);
+        GUIObj.displayTextArea.setText("Premium selected, remove handle when ready");
         
         State = States.HANDLE_ON;
     }
     
     /* handle removed */
     private void handleOff() {
-        
+    	GUIObj.displayTextArea.setText("Press Start/Stop Pump to begin pumping");
         State = States.HANDLE_OFF_PUMP_OFF;
     }
     
     /* start the pump */
     private void pumpStarted() {
         Simulator.startPump();
-        
+        GUIObj.displayTextArea.setText("Gas pumping...");
         State = States.PUMP_ON;
     }
     
     /* stop the pump */
     private void pumpStopped() {
         Simulator.stopPump();
-        
+        GUIObj.displayTextArea.setText("Pumping complete, please replace handle");
         State = States.HANDLE_OFF_PUMP_OFF;
     }
     
-    /* handle has been returned */
-    private void handleReturned() {
-        State = States.HANDLE_RETURN;
-    }
+    /* ask if the user wants their receipt */
+    private void promptReceipt() {
+    	GUIObj.displayTextArea.setText("Do you want your receipt? (yes or no)");
+    	State = States.RECEIPT_RESPONSE;
+	}
     
+    /* user chose to receive no receipt */
+	private void noReceipt() {
+		GUIObj.displayTextArea.setText("Have a nice day!");
+	}
+
+	/* give user receipt */
+	private void printReceipt() {
+		GUIObj.displayTextArea.setText("Receipt printed, have a nice day!");
+
+	}
+    
+	
     /* setters and getters */
     public void setGUIObj(ControllerJFrame obj) {
         GUIObj = obj;
