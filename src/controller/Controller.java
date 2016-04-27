@@ -21,6 +21,8 @@ public class Controller implements GUIListener {
     private double PlusPrice;
     private double PremiumPrice;
     private double CurrentPrice;
+    private String PIN;
+    private String ZIP;
     private States State;
     
     public enum GUIEventType
@@ -45,6 +47,9 @@ public class Controller implements GUIListener {
         RegularPrice = 2.19;
         PlusPrice = 2.29;
         PremiumPrice = 2.39;
+        
+        PIN = "";
+        ZIP = "";
     }
     
     /* GUI event */
@@ -99,7 +104,7 @@ public class Controller implements GUIListener {
     private void creditSelected() {
         /* do some bank stuff here */
         
-        GUIObj.displayTextArea.setText("Enter ZIP");
+        GUIObj.displayTextArea.setText("Enter ZIP:");
         State = States.ENTER_ZIP;
     }
     
@@ -107,32 +112,139 @@ public class Controller implements GUIListener {
     private void debitSelected() {
         /* do some bank stuff here */
         
-        GUIObj.displayTextArea.setText("Enter PIN");
+        GUIObj.displayTextArea.setText("Enter PIN:");
         State = States.ENTER_PIN;
     }
     
     /* Button push for pin number */
     private void handlePinButton(GUIEventType type) {
         /* handle the pin stuff per button */
-        
-        DecimalFormat numberFormat = new DecimalFormat("#.00");
-        GUIObj.jTextFieldRegular.setText(numberFormat.format(RegularPrice));
-        GUIObj.jTextFieldPlus.setText(numberFormat.format(PlusPrice));
-        GUIObj.jTextFieldPremium.setText(numberFormat.format(PremiumPrice));
-        GUIObj.displayTextArea.setText("Select gas type");
-        State = States.SELECT_GAS_TYPE;
+    	
+    	String pinDisplay = "";
+    	if(type == GUIEventType.BUTTONCANCEL){
+    		State = States.WAITING_FOR_SWIPE;
+    	}
+    	else if(type == GUIEventType.BUTTONENTER){
+    		/* on successful entry move state along */
+    		if(PIN.length() >= 4){
+    	        DecimalFormat numberFormat = new DecimalFormat("#.00");
+    	        GUIObj.jTextFieldRegular.setText(numberFormat.format(RegularPrice));
+    	        GUIObj.jTextFieldPlus.setText(numberFormat.format(PlusPrice));
+    	        GUIObj.jTextFieldPremium.setText(numberFormat.format(PremiumPrice));
+    	        GUIObj.displayTextArea.setText("Select gas type");
+    	        State = States.SELECT_GAS_TYPE;
+    		}
+    		/* else clear pin and start over at current state */
+    		else{
+    			PIN = "";
+    			GUIObj.displayTextArea.setText("Invalid PIN, try again");
+    		}
+
+    	}
+    	/* contains the logic for attaining the PIN via numpad */
+    	else{
+			if(type == GUIEventType.BUTTON0) {
+				PIN = PIN.concat("0");
+			}
+			else if (type == GUIEventType.BUTTON1){
+				PIN = PIN.concat("1");
+			}
+			else if (type == GUIEventType.BUTTON2){
+				PIN = PIN.concat("2");
+			}
+			else if (type == GUIEventType.BUTTON3){
+				PIN = PIN.concat("3");
+			}
+			else if (type == GUIEventType.BUTTON4){
+				PIN = PIN.concat("4");
+			}
+			else if (type == GUIEventType.BUTTON5){
+				PIN = PIN.concat("5");
+			}
+			else if (type == GUIEventType.BUTTON6){
+				PIN = PIN.concat("6");
+			}
+			else if (type == GUIEventType.BUTTON7){
+				PIN = PIN.concat("7");
+			}
+			else if (type == GUIEventType.BUTTON8){
+				PIN = PIN.concat("8");
+			}
+			else if (type == GUIEventType.BUTTON9){
+				PIN = PIN.concat("9");
+			}
+			else if (type == GUIEventType.BUTTONCLEAR){
+				PIN = "";
+			}
+			for(int i = 0; i < PIN.length(); i++){
+				pinDisplay = pinDisplay.concat("*");
+			}
+			GUIObj.displayTextArea.setText("Enter PIN:" + pinDisplay);
+	    }
+    
     }
     
     /* Button push for zip */
     private void handleZipButton(GUIEventType type) {
         /* handle the zip stuff per button */
-        
-        DecimalFormat numberFormat = new DecimalFormat("#.00");
-        GUIObj.jTextFieldRegular.setText(numberFormat.format(RegularPrice));
-        GUIObj.jTextFieldPlus.setText(numberFormat.format(PlusPrice));
-        GUIObj.jTextFieldPremium.setText(numberFormat.format(PremiumPrice));
-        GUIObj.displayTextArea.setText("Select gas type");
-        State = States.SELECT_GAS_TYPE;
+    	
+    	if(type == GUIEventType.BUTTONCANCEL){
+    		State = States.WAITING_FOR_SWIPE;
+    	}
+    	else if(type == GUIEventType.BUTTONENTER){
+    		/* on successful entry move state along */
+    		if(ZIP.length() == 5){
+    	        DecimalFormat numberFormat = new DecimalFormat("#.00");
+    	        GUIObj.jTextFieldRegular.setText(numberFormat.format(RegularPrice));
+    	        GUIObj.jTextFieldPlus.setText(numberFormat.format(PlusPrice));
+    	        GUIObj.jTextFieldPremium.setText(numberFormat.format(PremiumPrice));
+    	        GUIObj.displayTextArea.setText("Select gas type");
+    	        State = States.SELECT_GAS_TYPE;
+    		}
+    		/* else clear ZIP and start over at current state */
+    		else{
+    			ZIP = "";
+    			GUIObj.displayTextArea.setText("Invalid ZIP, try again");
+    		}
+
+    	}
+    	/* contains the logic for attaining the ZIP via numpad */
+    	else{
+			if(type == GUIEventType.BUTTON0) {
+				ZIP = ZIP.concat("0");
+			}
+			else if (type == GUIEventType.BUTTON1){
+				ZIP = ZIP.concat("1");
+			}
+			else if (type == GUIEventType.BUTTON2){
+				ZIP = ZIP.concat("2");
+			}
+			else if (type == GUIEventType.BUTTON3){
+				ZIP = ZIP.concat("3");
+			}
+			else if (type == GUIEventType.BUTTON4){
+				ZIP = ZIP.concat("4");
+			}
+			else if (type == GUIEventType.BUTTON5){
+				ZIP = ZIP.concat("5");
+			}
+			else if (type == GUIEventType.BUTTON6){
+				ZIP = ZIP.concat("6");
+			}
+			else if (type == GUIEventType.BUTTON7){
+				ZIP = ZIP.concat("7");
+			}
+			else if (type == GUIEventType.BUTTON8){
+				ZIP = ZIP.concat("8");
+			}
+			else if (type == GUIEventType.BUTTON9){
+				ZIP = ZIP.concat("9");
+			}
+			else if (type == GUIEventType.BUTTONCLEAR){
+				ZIP = "";
+			}
+			GUIObj.displayTextArea.setText("Enter ZIP:" + ZIP);
+	    }
     }
     
     /* select regular */
