@@ -9,9 +9,11 @@ Katie Patterson
 Main Controller class
 */
 
-package controller;
+package MasterController;
 
-import gasPumpMain.GUIListener;
+import GUISimulation.ControllerSimulatedFuncs;
+import GUISimulation.ControllerJFrame;
+import GUISimulation.GUIListener;
 import java.text.DecimalFormat;
 
 public class Controller implements GUIListener {

@@ -8,11 +8,10 @@ Katie Patterson
 
 Controller test GUI
 */
-package controller;
+package GUISimulation;
 
 import java.util.*;
-import gasPumpMain.GUIListener;
-import controller.Controller.GUIEventType;
+import MasterController.Controller.GUIEventType;
 
 public class ControllerJFrame extends javax.swing.JFrame {
     private List<GUIListener> listeners = new ArrayList<GUIListener>();
@@ -87,6 +86,7 @@ public class ControllerJFrame extends javax.swing.JFrame {
         displayTextArea.setColumns(20);
         displayTextArea.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         displayTextArea.setRows(5);
+        displayTextArea.setText("Swipe card to begin pumping");
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("1");

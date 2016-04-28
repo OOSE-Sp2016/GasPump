@@ -8,8 +8,8 @@ Katie Patterson
 
 GUIListener interface
 */
-package gasPumpMain;
-import controller.Controller.GUIEventType;
+package GUISimulation;
+import MasterController.Controller.GUIEventType;
 
 public interface GUIListener {
     void GUIEvent(GUIEventType type);

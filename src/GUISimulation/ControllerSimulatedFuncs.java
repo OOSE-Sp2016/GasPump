@@ -9,8 +9,9 @@ Katie Patterson
 Simulation functions for the controller
 This functionality would normally be done by hardware
 */
-package controller;
+package GUISimulation;
 
+import GUISimulation.ControllerJFrame;
 import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.logging.Level;
