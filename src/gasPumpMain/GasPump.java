@@ -6,13 +6,13 @@ Hendra Suteja
 Joseph Fox 
 Katie Patterson 
 
-Main class
+Main class - launches application
 */
-package gasPumpMain;
+package GasPumpMain;
 
-import controller.ControllerJFrame;
-import controller.Controller;
-import controller.ControllerSimulatedFuncs;
+import GUISimulation.ControllerJFrame;
+import MasterController.Controller;
+import GUISimulation.ControllerSimulatedFuncs;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
