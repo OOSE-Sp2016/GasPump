@@ -11,17 +11,10 @@ Handles prices of gas
 package PumpManager;
 
 public class PriceExpert {
-    private float RegularPrice;
-    private float PlusPrice;
-    private float SupremePrice;
-    private float TaxRate;
-    
-    PriceExpert () {
-        RegularPrice = (float) 2.19;
-        PlusPrice = (float) 2.29;
-        SupremePrice = (float) 2.39;
-        TaxRate = (float) .08;
-    }
+    private final float RegularPrice = (float) 2.19;
+    private final float PlusPrice = (float) 2.29;
+    private final float SupremePrice = (float) 2.39;
+    private final float TaxRate = (float) .08;
     
     /* return price per gallon of gas based on type */
     public float getPricePerGallon(GasType type) {
