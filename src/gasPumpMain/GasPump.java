@@ -13,8 +13,6 @@ package GasPumpMain;
 import GUISimulation.ControllerJFrame;
 import MasterController.Controller;
 import GUISimulation.ControllerSimulatedFuncs;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class GasPump {
     public static void main(String[] args) {
