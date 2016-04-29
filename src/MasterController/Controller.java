@@ -11,10 +11,14 @@ Main Controller class
 
 package MasterController;
 
+import CardServices.Card;
+import CardServices.CardType;
 import GUISimulation.ControllerSimulatedFuncs;
 import GUISimulation.ControllerJFrame;
 import GUISimulation.GUIListener;
+import PumpManager.GasType;
 import java.text.DecimalFormat;
+import PumpManager.Pump;
 
 public class Controller implements GUIListener {
     private ControllerJFrame GUIObj;
@@ -26,6 +30,9 @@ public class Controller implements GUIListener {
     private String PIN;
     private String ZIP;
     private States State;
+    private int pumpCount;
+    private Pump[] pumps;
+    private CardType type = CardType.CREDIT;
     
     public enum GUIEventType
     {
@@ -310,17 +317,15 @@ public class Controller implements GUIListener {
 	}
     
     /* user chose to receive no receipt */
-	private void noReceipt() {
-		GUIObj.displayTextArea.setText("Have a nice day!");
-	}
+    private void noReceipt() {
+        GUIObj.displayTextArea.setText("Have a nice day!");
+    }
 
-	/* give user receipt */
-	private void printReceipt() {
-		GUIObj.displayTextArea.setText("Receipt printed, have a nice day!");
-
-	}
+    /* give user receipt */
+    private void printReceipt() {
+        GUIObj.displayTextArea.setText("Receipt printed, have a nice day!");
+    }
     
-	
     /* setters and getters */
     public void setGUIObj(ControllerJFrame obj) {
         GUIObj = obj;
@@ -352,5 +357,43 @@ public class Controller implements GUIListener {
 
     public void setPremiumPrice(double PremiumPrice) {
         this.PremiumPrice = PremiumPrice;
+    }
+    
+    private void logTransaction(int pumpId, GasType type, float volume,
+            Card card) {
+        
+    }
+    
+    public void cancelTransaction(int pumpId) {
+        
+    }
+    
+    public void informFinalTotal(int pumpId, GasType type, float volume,
+            Card card) {
+        
+    }
+    
+    public void informPrepay(int pumpId, float total) {
+        
+    }
+    
+    public CardType requestCardType(String cardNumber) {
+        return type;
+    }
+    
+    public void setPumpCardsAllowed(boolean allow) {
+        
+    }
+    
+    public void setPumpEnabled(boolean enable) {
+        
+    }
+    
+    public Card verifyPIN(int pumpId, Card card) {
+        return card;
+    }
+    
+    public Card verifyZIP(int pumpId, Card card) {
+        return card;
     }
 }
