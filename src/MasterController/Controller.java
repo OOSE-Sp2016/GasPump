@@ -30,7 +30,7 @@ public class Controller implements GUIListener {
     private String PIN;
     private String ZIP;
     private States State;
-    private int pumpCount;
+    private int pumpCount = 1;
     private Pump[] pumps;
     private CardType type = CardType.CREDIT;
     
@@ -45,14 +45,14 @@ public class Controller implements GUIListener {
     };
     
     private enum States {
-        WAITING_FOR_SWIPE, SELECT_DEBIT_CREDIT, ENTER_PIN, ENTER_ZIP,
+        DISABLED, WAITING_FOR_SWIPE, SELECT_DEBIT_CREDIT, ENTER_PIN, ENTER_ZIP,
         SELECT_GAS_TYPE, HANDLE_ON, HANDLE_OFF_PUMP_OFF, PUMP_ON, 
         RECEIPT_RESPONSE,
     };
 
     /* constructor - initialize variables */
     public Controller() {
-        State = States.WAITING_FOR_SWIPE;
+        State = States.DISABLED;
         
         RegularPrice = 2.19;
         PlusPrice = 2.29;
@@ -60,6 +60,8 @@ public class Controller implements GUIListener {
         
         PIN = "";
         ZIP = "";
+        
+        
     }
     
     /* GUI event */
@@ -68,6 +70,8 @@ public class Controller implements GUIListener {
         if (State == States.WAITING_FOR_SWIPE) {
             if (type == GUIEventType.BUTTONSWIPE)
                 cardSwiped();
+            else if (type == GUIEventType.BUTTONDISABLE)
+                disable();
         } else if (State == States.SELECT_DEBIT_CREDIT) {
             if (type == GUIEventType.BUTTONCREDIT)
                 creditSelected();
@@ -96,16 +100,30 @@ public class Controller implements GUIListener {
             if (type == GUIEventType.BUTTONPUMPSTART)
                 pumpStopped();
         } else if (State == States.RECEIPT_RESPONSE) {
-        	if(type == GUIEventType.BUTTONYES){
-        		printReceipt();
-        	}
-        	else if(type == GUIEventType.BUTTONNO){
-        		noReceipt();
-        	}
-        		
-        } else {
+            if(type == GUIEventType.BUTTONYES){
+        	printReceipt();
+            }
+            else if(type == GUIEventType.BUTTONNO){
+        	noReceipt();
+            }
+        } else if (State == States.DISABLED) {
+            if(type == GUIEventType.BUTTONENABLE){
+        	enable();
+            }
+        }
+        else {
             
         }
+    }
+    
+    private void enable() {
+        GUIObj.displayTextArea.setText("Swipe card");
+        State = States.WAITING_FOR_SWIPE;
+    }
+    
+    private void disable() {
+        GUIObj.displayTextArea.setText("Pump disabled");
+        State = States.DISABLED;
     }
 
 	/* Card swiped */
@@ -294,6 +312,7 @@ public class Controller implements GUIListener {
     private void handleOff() {
     	GUIObj.displayTextArea.setText("Press Start/Stop Pump to begin pumping");
         State = States.HANDLE_OFF_PUMP_OFF;
+        GUIObj.jLabelHandle.setText("Handle OFF");
     }
     
     /* start the pump */
@@ -301,6 +320,7 @@ public class Controller implements GUIListener {
         Simulator.startPump();
         GUIObj.displayTextArea.setText("Gas pumping...");
         State = States.PUMP_ON;
+        GUIObj.jLabelPump.setText("Pump ON");
     }
     
     /* stop the pump */
@@ -308,12 +328,14 @@ public class Controller implements GUIListener {
         Simulator.stopPump();
         GUIObj.displayTextArea.setText("Pumping complete, please replace handle");
         State = States.HANDLE_OFF_PUMP_OFF;
+        GUIObj.jLabelPump.setText("Pump Off");
     }
     
     /* ask if the user wants their receipt */
     private void promptReceipt() {
     	GUIObj.displayTextArea.setText("Do you want your receipt? (yes or no)");
     	State = States.RECEIPT_RESPONSE;
+        GUIObj.jLabelHandle.setText("Handle On");
 	}
     
     /* user chose to receive no receipt */
@@ -329,6 +351,8 @@ public class Controller implements GUIListener {
     /* setters and getters */
     public void setGUIObj(ControllerJFrame obj) {
         GUIObj = obj;
+        
+        GUIObj.displayTextArea.setText("Pump disabled");
     }
     
     public void setSimulatedObj(ControllerSimulatedFuncs obj) {
